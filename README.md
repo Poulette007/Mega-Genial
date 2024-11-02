@@ -1,4 +1,4 @@
-## Equipe de projet P-08
+## Equipe de projet P-23
 Projet réalisé dans le cadre de l'Université de Sherbrooke 
 
 ## GIT HELPER
@@ -29,6 +29,6 @@ GIT BRANCH (PAS DANS CE PROJET)
     - Les tests unitaires ne marchent pas
     - Des print() sont présents dans le code
 
- ##Librairie a installer 
- -libRobus-master  URL => https://github.com/UdeS-GRO/LibRobUS
- -Grove_I2C_Color_Sensor_TCS3472-master URL => https://github.com/Seeed-Studio/Grove_I2C_Color_Sensor_TCS3472 
+## Librairie a installer 
+- libRobus-master  URL => https://github.com/UdeS-GRO/LibRobUS
+- Grove_I2C_Color_Sensor_TCS3472-master URL => https://github.com/Seeed-Studio/Grove_I2C_Color_Sensor_TCS3472 
