@@ -14,12 +14,10 @@ Git 101
 - git push
 - git status (voir que tout est bien commit)
 
-GIT BRANCH (PAS DANS CE PROJET)
-- git branch dev (creer une branche appelée dev)
-- git checkout dev (changer de branch pour aller sur dev)
-- coder tout
-- git checkout master (aller sur la branche principale)
-- git merge dev (ajouter dev dans master)
+## Librairie a installer 
+- libRobus-master  URL => https://github.com/UdeS-GRO/LibRobUS
+- Grove_I2C_Color_Sensor_TCS3472-master URL => https://github.com/Seeed-Studio/Grove_I2C_Color_Sensor_TCS3472
+
 
 ## WORKFLOW github
 - La branch master est protégée
@@ -28,7 +26,3 @@ GIT BRANCH (PAS DANS CE PROJET)
     - Le code ne compile pas
     - Les tests unitaires ne marchent pas
     - Des print() sont présents dans le code
-
-## Librairie a installer 
-- libRobus-master  URL => https://github.com/UdeS-GRO/LibRobUS
-- Grove_I2C_Color_Sensor_TCS3472-master URL => https://github.com/Seeed-Studio/Grove_I2C_Color_Sensor_TCS3472 
