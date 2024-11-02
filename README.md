@@ -1,25 +1,34 @@
-# Librairies Utilisées dans le Projet
+## Equipe de projet P-08
+Projet réalisé dans le cadre de l'Université de Sherbrooke 
 
-Ce projet utilise les bibliothèques suivantes pour fonctionner correctement :
+## GIT HELPER
 
-## 1. LibRobUS
-- **Description** : Bibliothèque pour la gestion des robots basés sur Arduino.
-- **Version** : Dernière version stable.
-- **Taille** : Environ 5 Ko.
+Pour clone le repo
+- git clone https://github.com/Poulette007/Mega-Genial.git
 
-## 2. Grove I2C Color Sensor TCS3472
-- **Description** : Bibliothèque pour le capteur de couleur TCS3472, permettant une communication I2C avec Arduino.
-- **Version** : Dernière version stable.
-- **Taille** : Environ 10 Ko.
+Git 101
+- git status (voir les fichiers à commit)
+- git pull (récupérer les  modifications des autres)
+- git add ficherNom (**NE PAS FAIRE** . ou *)
+- git commit -m "message"
+- git push
+- git status (voir que tout est bien commit)
 
----
+GIT BRANCH (PAS DANS CE PROJET)
+- git branch dev (creer une branche appelée dev)
+- git checkout dev (changer de branch pour aller sur dev)
+- coder tout
+- git checkout master (aller sur la branche principale)
+- git merge dev (ajouter dev dans master)
 
-### Installation des Librairies
+## WORKFLOW github
+- La branch master est protégée
+- Le code se fait sur la branch dev
+- Des tests sont réalisés afin de vérifier :
+    - Le code ne compile pas
+    - Les tests unitaires ne marchent pas
+    - Des print() sont présents dans le code
 
-Pour installer ces bibliothèques, utilisez le gestionnaire de bibliothèques de PlatformIO ou ajoutez-les manuellement dans votre répertoire `lib`.
-
-1. **LibRobUS** : Téléchargez et placez le dossier `LibRobUS-master` dans le répertoire `lib`.
-2. **Grove I2C Color Sensor TCS3472** : Téléchargez et placez le dossier `Grove_I2C_Color_Sensor_TCS3472-master` dans le répertoire `lib`.
-
-Assurez-vous que toutes les dépendances nécessaires sont installées et que votre environnement est configuré correctement.
-
+ ##Librairie a installer 
+ -libRobus-master  URL => https://github.com/UdeS-GRO/LibRobUS
+ -Grove_I2C_Color_Sensor_TCS3472-master URL => https://github.com/Seeed-Studio/Grove_I2C_Color_Sensor_TCS3472 
