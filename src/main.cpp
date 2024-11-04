@@ -1,18 +1,70 @@
+// include 
 #include <Arduino.h>
+#include <libRobus.h>
 
-// put function declarations here:
-int myFunction(int, int);
+
+bool isDebug = false;
+// ne pas toucher, laisser sur false, utiliser la fonction error
+bool isError = false;
+
+void beep(int time, int delayTime) {
+  AX_BuzzerON();
+  delay(time);
+  AX_BuzzerOFF();
+  delay(delayTime);
+}
+
+void error(String msg) {
+  isError = true;
+  Serial.println("#########################-- ERROR --#########################");
+  Serial.print("message: ");
+  Serial.println(msg);
+  beep(300, 300);
+  beep(300, 300);
+  beep(300, 300);
+  while (isError) {
+    delay(100);
+    Serial.println("ERROR");
+  }
+  
+  // call fonction stopAll() eteindre capteur important
+}
+
+float division(int premier, int second){
+  if(second == 0){
+    String message = "impossible de diviser: " + (String)premier + " par : " + (String)second;  
+    error(message);
+  }
+
+  return premier / second;
+}
+
+void logiqueLoop(){
+
+}
+
+void debugLoop() {
+  
+}
 
 void setup() {
-  // put your setup code here, to run once:
-  int result = myFunction(2, 3);
+  Serial.begin(9600);
+  
+  if(isDebug) {
+    Serial.println("Debug");
+  }
 }
+
 
 void loop() {
-  // put your main code here, to run repeatedly:
+  if (isError) {
+    return;
+  }
+
+  if (isDebug) {
+    debugLoop();
+  }
+
+  logiqueLoop();
 }
 
-// put function definitions here:
-int myFunction(int x, int y) {
-  return x + y;
-}
