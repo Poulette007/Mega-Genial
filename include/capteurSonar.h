@@ -1,1 +1,2 @@
-int getCapteurSonar();
+float GetSonarValue();
+bool isObjectInFront();
