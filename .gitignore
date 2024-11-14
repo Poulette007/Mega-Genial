@@ -34,3 +34,4 @@ lib/                     # Dossier des bibliothèques installées par PlatformIO
 *.bak
 *.old
 *.orig
+.vscode

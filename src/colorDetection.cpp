@@ -11,8 +11,9 @@ void initColorSensor(Adafruit_TCS34725 tcs)
     if (!tcs.begin())
     {
         Serial.println("Error initializing TCS34725");
-        while (1)
+        while (1) {
             delay(1000);
+        }
     }
 }
 
@@ -38,9 +39,12 @@ bool isBlue(Adafruit_TCS34725 tcs)
 
     if (abs(red - 43) < delta && abs(blue - 120) < delta && abs(green - 76) < delta)
     {
-        color = 4;
         Serial.print("Color Detected: blue");
         color = true;
     }
+    else {
+        Serial.println("no color detected");
+    }
+
     return color;
 }

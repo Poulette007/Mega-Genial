@@ -46,9 +46,8 @@ void followLine(Adafruit_TCS34725 tcs)
         if (color == true)
         {
             //dispenserOn();
-            break;
         }
-        else{
+        else if (color == false){
             //dispenserOff();
         }
 
@@ -76,7 +75,7 @@ void followLine(Adafruit_TCS34725 tcs)
             MOTOR_SetSpeed(0, 0.2);
             MOTOR_SetSpeed(1, 0);
         }
-        else if (detectedLine == 0)
+        else if (!detectedLine)
         {
             MOTOR_SetSpeed(0, 0.2);
             MOTOR_SetSpeed(1, 0.2);
