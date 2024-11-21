@@ -41,7 +41,8 @@ bool isObjectInFront() {
     int distance = GetSonarValue();
     if (distance >= PIN_SONAR_MIN_DIST && distance <= PIN_SONAR_MAX_DIST) {
         return true;
-    } else {
+    }
+    else {
         return false;
     }
 }

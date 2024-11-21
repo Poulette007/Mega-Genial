@@ -30,23 +30,23 @@ bool isBlue(Adafruit_TCS34725 tcs)
     int blue = (float)b / clear * 255.0;
     int delta = 6;
 
-    Serial.println();
-    Serial.print("r: ");
-    Serial.println(red);
-    Serial.print("g: ");
-    Serial.println(green);
-    Serial.print("b: ");
-    Serial.println(blue);
+    // Serial.println();
+    // Serial.print("r: ");
+    // Serial.println(red);
+    // Serial.print("g: ");
+    // Serial.println(green);
+    // Serial.print("b: ");
+    // Serial.println(blue);
 
     bool color = false;
 
     if (abs(red - redValue) < delta && abs(blue - blueValue) < delta && abs(green - greenValue) < delta)
     {
-        Serial.print("Color Detected: blue");
+        //Serial.print("Color Detected: blue");
         color = true;
     }
     else {
-        Serial.println("no color detected");
+        //Serial.println("no color detected");
     }
 
     return color;
