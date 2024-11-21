@@ -40,9 +40,11 @@ float GetSonarValue() {
 bool isObjectInFront() {
     int distance = GetSonarValue();
     if (distance >= PIN_SONAR_MIN_DIST && distance <= PIN_SONAR_MAX_DIST) {
+        Serial.println("Object in front");
         return true;
     }
     else {
+        Serial.println("No object in front");
         return false;
     }
 }

@@ -16,7 +16,7 @@
 #define PIN_SONAR_MIN_DIST 5
 
 // SUIVEUR DE LIGNE
-#define MOTOR_SPEED 0.1
+#define MOTOR_SPEED 0.15
 
 #define LEFT_LINE 1
 #define CENTER_LINE 2
