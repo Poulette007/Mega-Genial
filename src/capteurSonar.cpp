@@ -6,7 +6,7 @@ const int CM_PER_MU_SEC = 58.2;
 int change = 0;
 
 // Get Sonar Value retourn the distance between the closet objet and the capteur
-// need a delay of minimum 500ms between each call
+// need a delay of minimum 250ms between each call
 float GetSonarValue() {
     float duree = 0;
     float distance = 0;
@@ -29,9 +29,9 @@ float GetSonarValue() {
     }
     
     distance = duree / CM_PER_MU_SEC;
-    Serial.print("Capteur ");
-    Serial.print(change % 2);
-    Serial.print(" Distance: ");
+    //Serial.print("Capteur ");
+    //Serial.print(change % 2);
+    //Serial.print(" Distance: ");
     change++;
     return distance;
 }

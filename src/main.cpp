@@ -3,6 +3,7 @@
 #include <dropSalt.h>
 #include <libRobus.h>
 #include <logiqueExec.h>
+#include "constante.h"
 #define LEFT 0
 #define RIGHT 1
 #define FRONT 2
@@ -56,6 +57,10 @@ void debugLoop() {
 
 void setup() {
   Serial.begin(9600);
+  pinMode(PIN_SONAR_TRIG, OUTPUT);    
+  pinMode(PIN_SONAR_ECHO, INPUT);    
+  pinMode(PIN_SONAR_ECHO_2, INPUT);    
+  pinMode(PIN_SONAR_TRIG_2, OUTPUT);   
   BoardInit();
   if(isDebug) {
     Serial.println("Debug");

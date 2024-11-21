@@ -82,15 +82,35 @@ void execute()
   while (isLine() != 4)
   {
 
-    // if (sonarCounter == 25)
-    // {
-    //   objectDetected = isObjectInFront();
-    //   sonarCounter = 0;
-    // }
-    // else
-    // {
-    //   sonarCounter++;
-    // }
+    if (sonarCounter == 3)
+    {
+      Serial.println("##################################################################");
+      Serial.println("##################################################################");
+      Serial.println("##################################################################");
+      if (isObjectInFront())
+      {
+        int isObjectInFrontVar = 0;
+        stopAll();
+        Serial.println("Sonar Detect in execute");
+        while (isObjectInFrontVar <= 5)
+        {
+          delay(250);
+          if (!isObjectInFront())
+          {
+            isObjectInFrontVar ++;
+          }else{
+            isObjectInFrontVar = 0;
+          }
+        }
+        
+        
+      }
+      sonarCounter = 0;
+    }
+    else
+    {
+      sonarCounter++;
+    }
 
     if (1)
     {
