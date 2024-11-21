@@ -12,9 +12,17 @@ void stopAll()
 
 int isLine()
 {
+    Serial.print("A10: ");
+    Serial.println(analogRead(A10));
+    Serial.print("A9: ");
+    Serial.println(analogRead(A9));
+    Serial.print("A8: ");
+    Serial.println(analogRead(A8));
+    //delay(100);
     if (analogRead(A10) > 300 && analogRead(A9) > 300 && analogRead(A8) > 300)
     {
         return 4;
+
     }
     if (analogRead(A8) > 300)
     {

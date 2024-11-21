@@ -8,9 +8,18 @@
 #define PIN_MOTEUR_SEL A6
 
 // SONAR
-#define PIN_SONAR_TRIG 2
-#define PIN_SONAR_ECHO 3
-#define PIN_SONAR_TRIG_2 4
-#define PIN_SONAR_ECHO_2 5
-#define PIN_SONAR_MAX_DIST 50
+#define PIN_SONAR_TRIG A2
+#define PIN_SONAR_ECHO A3
+#define PIN_SONAR_TRIG_2 A4
+#define PIN_SONAR_ECHO_2 A5
+#define PIN_SONAR_MAX_DIST 10
 #define PIN_SONAR_MIN_DIST 5
+
+// SUIVEUR DE LIGNE
+#define MOTOR_SPEED 0.1
+
+#define LEFT_LINE 1
+#define CENTER_LINE 2
+#define RIGHT_LINE 3
+#define NO_LINE 0
+#define END_LINE 4

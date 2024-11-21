@@ -1,11 +1,6 @@
 #include "logiqueExec.h"
-#define MOTOR_SPEED 0.2
-
-#define LEFT_LINE 1
-#define CENTER_LINE 2
-#define RIGHT_LINE 3
-#define NO_LINE 0
-#define END_LINE 4
+#include "dropSalt.h"
+#include "constante.h"
 
 void execute()
 {
@@ -20,10 +15,14 @@ void execute()
     int color = isBlue(tcs);
     if (color == true)
     {
+      int isOn=1;
+      dropSalt(isOn);
       // dispenserOn();
     }
     else if (color == false)
     {
+      int isOn=0;
+      dropSalt(isOn);
       // dispenserOff();
     }
 
@@ -59,5 +58,6 @@ void execute()
     // lastDetectedLine = detectedLine;
     // lastColor = color;
   }
+  delay(10);
   stopAll();
 }
