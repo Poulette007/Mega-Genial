@@ -91,6 +91,7 @@ void execute()
       {
         int isObjectInFrontVar = 0;
         stopAll();
+        dropSalt(0);
         Serial.println("Sonar Detect in execute");
         while (isObjectInFrontVar <= 5)
         {
