@@ -82,7 +82,7 @@ void execute()
   while (isLine() != 4)
   {
 
-    if (sonarCounter == 3)
+    if (sonarCounter == 10)
     {
       Serial.println("##################################################################");
       Serial.println("##################################################################");
@@ -103,81 +103,87 @@ void execute()
             isObjectInFrontVar = 0;
           }
         }
-        
-        
+
+
       }
       sonarCounter = 0;
     }
     else
     {
       sonarCounter++;
+      Serial.print("sonarCounter: ");
+      Serial.println(sonarCounter);
     }
 
     if (1)
     {
-      color = isBlue(tcs);
-      Serial.print("color: ");
-      Serial.println(color);
+    color = isBlue(tcs);
+    Serial.print("color: ");
+    Serial.println(color);
 
-      if (color == true)
-      {
-        Serial.println("Color Detected: blue");
-        // dropSalt(1);
-        //  dispenserOn();
-        compteur++;
-        nbDeBleu++;
-      }
-      else if (color == false)
-      {
-        Serial.println("no color detected");
-        // dropSalt(0);
-        //  dispenserOff();
-        compteur++;
-      }
+    if (color == true)
+    {
+      Serial.println("Color Detected: blue");
+      // dropSalt(1);
+      // dispenserOn();
+      compteur++;
+      nbDeBleu++;
+    }
+    else if (color == false)
+    {
+      Serial.println("no color detected");
+      // dropSalt(0);
+      // dispenserOff();
+      compteur++;
+    }
 
-      if (compteur == 10 && nbDeBleu >= 6)
-      {
-        onBlue = true;
-        Serial.print("compteur: ");
-        Serial.println(compteur);
-        Serial.print("nbDeBleu: ");
-        Serial.println(nbDeBleu);
-        compteur = 0;
-        nbDeBleu = 0;
-      }
+    if (compteur == 1 && nbDeBleu >= 1)
+    {
+      onBlue = true;
+      Serial.print("compteur: ");
+      Serial.println(compteur);
+      Serial.print("nbDeBleu: ");
+      Serial.println(nbDeBleu);
+      compteur = 0;
+      nbDeBleu = 0;
+    }
 
-      else if (compteur == 10 && nbDeBleu < 6)
-      {
-        onBlue = false;
-        Serial.print("compteur: ");
-        Serial.println(compteur);
-        Serial.print("nbDeBleu: ");
-        Serial.println(nbDeBleu);
-        compteur = 0;
-      }
+    else if (compteur == 1 && nbDeBleu < 1)
+    {
+      onBlue = false;
+      Serial.print("compteur: ");
+      Serial.println(compteur);
+      Serial.print("nbDeBleu: ");
+      Serial.println(nbDeBleu);
+      compteur = 0;
+    }
 
-      if (lastState == true && onBlue == true)
-      {
-        Serial.println("is blue and was blue");
-      }
-      else if (lastState == false && onBlue == false)
-      {
-        Serial.println("is not blue and was not blue");
-      }
-      else if (lastState == false && onBlue == true)
-      {
-        Serial.println("is blue and was not blue");
-        dropSalt(1);
-      }
-      else if (lastState == true && onBlue == false)
-      {
-        Serial.println("is not blue and was blue");
-        dropSalt(0);
-      }
+    if (lastState == true && onBlue == true)
+    {
+      dropSalt(1);
+      Serial.println("is blue and was blue");
 
-      lastState = onBlue;
+    }
+    else if (lastState == false && onBlue == false)
+    {
+      dropSalt(0);
+      Serial.println("is not blue and was not blue");
+    }
+    else if (lastState == false && onBlue == true)
+    {
+      Serial.println("is blue and was not blue");
+      dropSalt(1);
 
-      // stopAll();
+    }
+    else if (lastState == true && onBlue == false)
+    {
+      Serial.println("is not blue and was blue");
+      dropSalt(0);
+    }
+
+    lastState = onBlue;
+
+    // stopAll();
 
       int detectedLine = isLine();
       // Serial.println(detectedLine);

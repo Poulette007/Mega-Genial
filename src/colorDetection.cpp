@@ -3,9 +3,9 @@
 //
 #include "colorDetection.h"
 
-#define redValue 38
-#define greenValue 77
-#define blueValue 124
+#define redValue 40
+#define greenValue 78
+#define blueValue 122
 
 void initColorSensor(Adafruit_TCS34725 tcs)
 {
@@ -42,11 +42,11 @@ bool isBlue(Adafruit_TCS34725 tcs)
 
     if (abs(red - redValue) < delta && abs(blue - blueValue) < delta && abs(green - greenValue) < delta)
     {
-        //Serial.print("Color Detected: blue");
+        Serial.print("Color Detected: blue");
         color = true;
     }
     else {
-        //Serial.println("no color detected");
+        Serial.println("no color detected");
     }
 
     return color;

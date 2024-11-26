@@ -3,6 +3,7 @@
 //
 #include "suivageLigne.h"
 #include "colorDetection.h"
+#include "constante.h"
 
 void stopAll()
 {
@@ -19,26 +20,32 @@ int isLine()
     // Serial.print("A8: ");
     // Serial.println(analogRead(A8));
     //delay(100);
-    if (analogRead(A10) > 300 && analogRead(A9) > 300 && analogRead(A8) > 300)
+    if (analogRead(A10) > sensorValue && analogRead(A9) > sensorValue && analogRead(A8) > sensorValue)
     {
+        Serial.print("les 3");
+        //Serial.println()
         return 4;
 
     }
-    if (analogRead(A8) > 300)
+    if (analogRead(A8) > sensorValue)
     {
-        // Serial.println(analogRead(A8));
+        Serial.print("A8: ");
+        Serial.println(analogRead(A8));
         return 3;
     }
-    if (analogRead(A9) > 300)
+    if (analogRead(A9) > sensorValue)
     {
-        // Serial.println(analogRead(A9));
+        Serial.print("A9: ");
+        Serial.println(analogRead(A9));
         return 2;
     }
-    if (analogRead(A10) > 300)
+    if (analogRead(A10) > sensorValue)
     {
-        // Serial.println(analogRead(A10));
+        Serial.print("A10: ");
+        Serial.println(analogRead(A10));
         return 1;
     }
+    Serial.println("no line");
     return 0;
 }
 

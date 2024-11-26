@@ -17,6 +17,7 @@
 
 // SUIVEUR DE LIGNE
 #define MOTOR_SPEED 0.15
+#define sensorValue 100
 
 #define LEFT_LINE 1
 #define CENTER_LINE 2
