@@ -78,52 +78,51 @@ void execute()
   bool objectDetected = false;
   long entryTime = 100000000;
   long exitTime = 100000000;
+  int compteurFin = 0;
 
   // int lastDetectedLine = 0;
   // int lastColor = 0;
-  while (isLine() != 4)
+  while (1)
   {
+    // if (sonarCounter == 10)
+    // {
+    //   Serial.println("##################################################################");
+    //   Serial.println("##################################################################");
+    //   Serial.println("##################################################################");
+    //   if (isObjectInFront())
+    //   {
+    //     int isObjectInFrontVar = 0;
+    //     stopAll();
+    //     dropSalt(0);
+    //     Serial.println("Sonar Detect in execute");
+    //     while (isObjectInFrontVar <= 5)
+    //     {
+    //       delay(250);
+    //       if (!isObjectInFront())
+    //       {
+    //         isObjectInFrontVar ++;
+    //       }else{
+    //         isObjectInFrontVar = 0;
+    //       }
+    //     }
+    //   }
+    //   if (color) {
+    //     onBlue = true;
+    //   }
+    //   else {
+    //     onBlue = false;
+    //   }
+    //   lastState = false;
+    //   sonarCounter = 0;
+    // }
+    // else
+    // {
+    //   sonarCounter++;
+    //   Serial.print("sonarCounter: ");
+    //   Serial.println(sonarCounter);
+    // }
 
-    if (sonarCounter == 10)
-    {
-      Serial.println("##################################################################");
-      Serial.println("##################################################################");
-      Serial.println("##################################################################");
-      if (isObjectInFront())
-      {
-        int isObjectInFrontVar = 0;
-        stopAll();
-        dropSalt(0);
-        Serial.println("Sonar Detect in execute");
-        while (isObjectInFrontVar <= 5)
-        {
-          delay(250);
-          if (!isObjectInFront())
-          {
-            isObjectInFrontVar ++;
-          }else{
-            isObjectInFrontVar = 0;
-          }
-        }
-      }
-      if (color) {
-        onBlue = true;
-      }
-      else {
-        onBlue = false;
-      }
-      lastState = false;
-      sonarCounter = 0;
-    }
-    else
-    {
-      sonarCounter++;
-      Serial.print("sonarCounter: ");
-      Serial.println(sonarCounter);
-    }
-
-    if (1)
-    {
+    if (1) {
       color = isBlue(tcs);
       Serial.print("color: ");
       Serial.println(color);
@@ -140,7 +139,6 @@ void execute()
       {
         Serial.println("no color detected");
         // dropSalt(0);
-        // dispenserOff();
         compteur++;
       }
 
@@ -153,6 +151,7 @@ void execute()
         Serial.println(nbDeBleu);
         compteur = 0;
         nbDeBleu = 0;
+
         //entryTime = millis();
       }
 
@@ -167,51 +166,59 @@ void execute()
         //exitTime = millis();
       }
 
-      if (lastState == true && onBlue == true)
-      {
-        //dropSalt(1);
-        Serial.println("is blue and was blue");
-      }
-      else if (lastState == false && onBlue == false)
-      {
-        //dropSalt(0);
-        Serial.println("is not blue and was not blue");
-      }
-      else if (lastState == false && onBlue == true)
-      {
-        entryTime = millis();
-        Serial.print("entryTime: ");
-        Serial.println(entryTime);
-        Serial.println("is blue and was not blue");
-        //dropSalt(1);
-      }
-      else if (lastState == true && onBlue == false)
-      {
-        Serial.println("is not blue and was blue");
-        //dropSalt(0);
-        exitTime = millis();
-        Serial.print("exitTime: ");
-        Serial.println(exitTime);
-      }
+       if (lastState == true && onBlue == true)
+       {
+         //dropSalt(1);
+         Serial.println("is blue and was blue");
+       }
+       else if (lastState == false && onBlue == false)
+       {
+         //dropSalt(0);
+         Serial.println("is not blue and was not blue");
+       }
+       else if (lastState == false && onBlue == true)
+       {
+         entryTime = millis();
+         Serial.print("entryTime: ");
+         Serial.println(entryTime);
+         Serial.println("is blue and was not blue");
+         //dropSalt(1);
+       }
+       else if (lastState == true && onBlue == false)
+       {
+         Serial.println("is not blue and was blue");
+         //dropSalt(0);
+         exitTime = millis();
+         Serial.print("exitTime: ");
+         Serial.println(exitTime);
+       }
       lastState = onBlue;
-      Serial.print("millis: ");
-      Serial.println(millis());
-      if (millis() >= entryTime + 1500) {
-        dropSalt(1);
-      }
-      if (millis() >= exitTime + 2500) {
-        dropSalt(0);
-      }
+       Serial.print("millis: ");
+       Serial.println(millis());
+       if (millis() >= entryTime + 2500) {
+         dropSalt(1);
+       }
+       if (millis() >= exitTime + 1500) {
+         dropSalt(0);
+       }
 
-    // stopAll();
+      // stopAll();
 
       int detectedLine = isLine();
       // Serial.println(detectedLine);
 
-      if (detectedLine == 4)
+      if (detectedLine == 4) {
+        compteurFin++;
+        Serial.print("compteurFin: ");
+        Serial.println(compteurFin);
+        if (compteurFin >= 4) {
+          stopAll();
+          break;
+        }
+      }
+      else
       {
-        stopAll();
-        break;
+        compteurFin = 0;
       }
 
       if (detectedLine == 1)
@@ -238,7 +245,7 @@ void execute()
       // lastDetectedLine = detectedLine;
       // lastColor = color;
     }
-    else
+    if (ROBUS_IsBumper(RIGHT))
     {
       stopAll();
     }

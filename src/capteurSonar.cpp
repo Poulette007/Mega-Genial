@@ -17,15 +17,16 @@ float GetSonarValue() {
         digitalWrite(PIN_SONAR_TRIG, HIGH);
         delayMicroseconds(10);
         digitalWrite(PIN_SONAR_TRIG, LOW);
-        duree = pulseIn(PIN_SONAR_ECHO, HIGH); 
-    } else 
+        duree = pulseIn(PIN_SONAR_ECHO, HIGH, 25000);
+    }
+    else
     {
         digitalWrite(PIN_SONAR_TRIG_2, LOW);
         delayMicroseconds(2);
         digitalWrite(PIN_SONAR_TRIG_2, HIGH);
         delayMicroseconds(10);
         digitalWrite(PIN_SONAR_TRIG_2, LOW);
-        duree = pulseIn(PIN_SONAR_ECHO_2, HIGH); 
+        duree = pulseIn(PIN_SONAR_ECHO_2, HIGH, 25000);
     }
     
     distance = duree / CM_PER_MU_SEC;

@@ -4,6 +4,7 @@
 #include <libRobus.h>
 #include <logiqueExec.h>
 #include "constante.h"
+#include "tests.h"
 #define LEFT 0
 #define RIGHT 1
 #define FRONT 2
@@ -83,8 +84,8 @@ void loop() {
     //Serial.println("Bumper gauche");
     // MOTOR_SetSpeed(0, 0.1);
     // MOTOR_SetSpeed(1, 0.1);
-    // Adafruit_TCS34725 tcs = Adafruit_TCS34725(TCS34725_INTEGRATIONTIME_50MS, TCS34725_GAIN_4X);
-    // initColorSensor(tcs);
+    //Adafruit_TCS34725 tcs = Adafruit_TCS34725(TCS34725_INTEGRATIONTIME_50MS, TCS34725_GAIN_4X);
+    //initColorSensor(tcs);
     // isBlue(tcs);
     //isLine();
     execute();

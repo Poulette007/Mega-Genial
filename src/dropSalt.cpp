@@ -6,7 +6,7 @@
 void dropSalt(int isOn) {//si isOn est a 1 laisser le sel tomber, si a 0 empecher le sel tomber
     //setup
     int angleStop=90;
-    int angleDrop=25;
+    int angleDrop=30;
     int servoSelected=0;
     int motorPin=11;
     pinMode(motorPin,OUTPUT);
