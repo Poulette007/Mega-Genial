@@ -81,6 +81,8 @@ void loop() {
     //MOTOR_SetSpeed(0,0.5);
     delay(10);
     //Serial.println("Bumper gauche");
+    // MOTOR_SetSpeed(0, 0.1);
+    // MOTOR_SetSpeed(1, 0.1);
     // Adafruit_TCS34725 tcs = Adafruit_TCS34725(TCS34725_INTEGRATIONTIME_50MS, TCS34725_GAIN_4X);
     // initColorSensor(tcs);
     // isBlue(tcs);

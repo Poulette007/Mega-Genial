@@ -42,7 +42,7 @@ bool isBlue(Adafruit_TCS34725 tcs)
 
     if (abs(red - redValue) < delta && abs(blue - blueValue) < delta && abs(green - greenValue) < delta)
     {
-        Serial.print("Color Detected: blue");
+        Serial.println("Color Detected: blue");
         color = true;
     }
     else {
